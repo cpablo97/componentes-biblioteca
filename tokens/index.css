@@ -1,0 +1,11 @@
+/**
+ * Uniandes Design System — Token index
+ * Import this single file in your Storybook preview and in any consuming project.
+ *
+ * Load order matters:
+ *   1. primitives.css — defines raw values (:root custom properties)
+ *   2. aliases.css    — maps semantic names to primitives (also :root, can reference primitives)
+ */
+
+@import './primitives.css';
+@import './aliases.css';

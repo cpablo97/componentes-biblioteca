@@ -1,0 +1,257 @@
+/**
+ * Uniandes Design System — Aliases
+ * Semantic tokens that map to primitives. These are what components use.
+ * Never reference primitives.css values directly in component CSS — always go through aliases.
+ *
+ * Structure mirrors the Figma variable collections:
+ *   — color/superficie/* → surface roles
+ *   — color/texto/*      → text roles
+ *   — color/borde/*      → border roles
+ *   — color/boton/*      → interactive/button roles
+ *   — color/imagen/*     → media/placeholder roles
+ *
+ * Dark mode: override alias values under [data-theme="dark"].
+ * Primitives never change between themes — only aliases do.
+ */
+
+:root {
+
+  /* ─────────────────────────────────────────────
+   * SURFACE — background fills
+   * ───────────────────────────────────────────── */
+  --uds-color-superficie-base:         var(--uds-blanco-puro);       /* page background */
+  --uds-color-superficie-tarjeta:      var(--uds-crema-100);         /* card background (Figma: color/superficie/tarjeta) */
+  --uds-color-superficie-slot:         var(--uds-crema-50);          /* card slot / list item bg (high hardcoded usage) */
+  --uds-color-superficie-seleccionado: var(--uds-crema-200);         /* selected/hover state (Figma: color/superficie/seleccionado) */
+  --uds-color-superficie-overlay:      var(--uds-negro-blur);        /* modal scrim / backdrop */
+
+
+  /* ─────────────────────────────────────────────
+   * TEXT — foreground text colors
+   * ───────────────────────────────────────────── */
+  --uds-color-texto-primario:    var(--uds-negro-100);     /* primary body text (Figma: color/texto/primario) */
+  --uds-color-texto-secundario:  var(--uds-gris-600);      /* descriptions, secondary labels */
+  --uds-color-texto-terciario:   var(--uds-gris-500);      /* tertiary / supporting text */
+  --uds-color-texto-deshabilitado: var(--uds-gris-100);    /* disabled text */
+  --uds-color-texto-placeholder: var(--uds-gris-400);      /* input placeholders, empty states */
+  --uds-color-texto-invertido:   var(--uds-blanco-100);    /* text on dark/filled backgrounds */
+  --uds-color-texto-display:     var(--uds-negro-puro);    /* Gamay display headings, image overlays */
+  --uds-color-texto-antetitulo:  var(--uds-gris-700);      /* antetítulo / eyebrow labels */
+
+
+  /* ─────────────────────────────────────────────
+   * BORDER — stroke and outline colors
+   * ───────────────────────────────────────────── */
+  --uds-color-borde-etiqueta:  var(--uds-negro-200);  /* tag/label borders (Figma: color/borde/etiqueta) */
+  --uds-color-borde-sutil:     var(--uds-gris-200);   /* skeleton, divider lines */
+  --uds-color-borde-medio:     var(--uds-gris-300);   /* image placeholder borders */
+
+
+  /* ─────────────────────────────────────────────
+   * INTERACTIVE — buttons and controls
+   * ───────────────────────────────────────────── */
+  --uds-color-boton-primario-fondo:  var(--uds-negro-200);  /* primary button fill (Figma: color/boton/primario/fondo) */
+  --uds-color-boton-primario-texto:  var(--uds-blanco-100); /* primary button label (Figma: color/boton/primario/texto) */
+  --uds-color-boton-amarillo-fondo:  var(--uds-amarillo-100); /* brand yellow CTA */
+  --uds-color-boton-amarillo-texto:  var(--uds-amarillo-900); /* text on yellow button */
+
+
+  /* ─────────────────────────────────────────────
+   * MEDIA — image, icon, and placeholder roles
+   * ───────────────────────────────────────────── */
+  --uds-color-imagen-placeholder: var(--uds-gris-300);     /* image placeholder fill (Figma: color/imagen/placeholder) */
+  --uds-color-imagen-icono:       var(--uds-gris-500);     /* icon fills inside image slots (Figma: color/imagen/icono) */
+
+
+  /* ─────────────────────────────────────────────
+   * FEATURE — IA Assistant palette
+   * Only for IA / AI-specific components.
+   * ───────────────────────────────────────────── */
+  --uds-color-ia-fondo:          var(--uds-violeta-50);
+  --uds-color-ia-acento:         var(--uds-violeta-300);
+  --uds-color-ia-texto:          var(--uds-violeta-700);
+  --uds-color-ia-boton-fondo:    var(--uds-violeta-900);
+  --uds-color-ia-icono:          var(--uds-violeta-600);
+
+
+  /* ─────────────────────────────────────────────
+   * PERSONA — role/cargo accent
+   * ───────────────────────────────────────────── */
+  --uds-color-cargo-texto: var(--uds-azul-marino-100);
+
+
+  /* ─────────────────────────────────────────────
+   * BORDER RADIUS — semantic aliases
+   * ───────────────────────────────────────────── */
+  --uds-border-radius-etiqueta:   var(--uds-radius-xs); /* tags, chips */
+  --uds-border-radius-boton:      var(--uds-radius-sm); /* buttons, inputs */
+  --uds-border-radius-tarjeta:    var(--uds-radius-lg); /* cards, panels */
+  --uds-border-radius-contenedor: var(--uds-radius-xl); /* hero sections, large containers */
+
+
+  /* ─────────────────────────────────────────────
+   * SHADOWS — semantic aliases
+   * ───────────────────────────────────────────── */
+  --uds-sombra-lateral: var(--uds-shadow-lateral);
+  --uds-sombra-suave:   var(--uds-shadow-soft);
+
+
+  /* ─────────────────────────────────────────────
+   * TYPOGRAPHY — semantic role aliases (Source Sans 3)
+   *
+   * Naming: --uds-text-{role}-{size?}
+   * Each shorthand maps to: font-family / size / weight / line-height
+   * Components use these as CSS custom property groups, not a single shorthand.
+   * ───────────────────────────────────────────── */
+
+  /* Body — Source Sans 3 Regular */
+  --uds-text-body-xxs-size:   10px;
+  --uds-text-body-xxs-lh:     12px;
+
+  --uds-text-body-xs-size:    12px;
+  --uds-text-body-xs-lh:      16px;
+
+  --uds-text-body-xs-tight-size: 12px;
+  --uds-text-body-xs-tight-lh:   14px;
+
+  --uds-text-body-sm-size:    14px;
+  --uds-text-body-sm-lh:      20px;
+
+  --uds-text-body-md-size:    16px;
+  --uds-text-body-md-lh:      24px;
+
+  --uds-text-body-md-compact-size: 16px;
+  --uds-text-body-md-compact-lh:   20px;
+
+  --uds-text-body-lg-size:    20px;
+  --uds-text-body-lg-lh:      32px;
+
+  /* Label / Antetítulo — Source Sans 3 Medium */
+  --uds-text-label-md-size:   16px;
+  --uds-text-label-md-lh:     24px;
+  --uds-text-label-md-weight: 500;
+
+  /* Tag — Source Sans 3 Regular, tight leading */
+  --uds-text-tag-size:        14px;
+  --uds-text-tag-lh:          14px;
+
+  /* Buttons — Source Sans 3 SemiBold */
+  --uds-text-button-size:     16px;
+  --uds-text-button-lh:       16px;
+  --uds-text-button-weight:   600;
+
+  /* Search */
+  --uds-text-search-size:     18px;
+  --uds-text-search-lh:       20px;
+
+  /* Headings — Source Sans 3 SemiBold */
+  --uds-text-heading-sm-size: 18px;
+  --uds-text-heading-sm-lh:   20px;
+  --uds-text-heading-sm-weight: 600;
+
+  --uds-text-heading-xs-size: 20px;
+  --uds-text-heading-xs-lh:   24px;
+  --uds-text-heading-xs-weight: 500;
+
+  --uds-text-heading-lg-size: 32px;
+  --uds-text-heading-lg-lh:   36px;
+  --uds-text-heading-lg-weight: 600;
+
+  /* Card titles — Source Sans 3 Medium */
+  --uds-text-card-title-sm-size: 24px;
+  --uds-text-card-title-sm-lh:   28px;
+  --uds-text-card-title-sm-weight: 500;
+
+  --uds-text-card-title-md-size: 24px;
+  --uds-text-card-title-md-lh:   32px;
+  --uds-text-card-title-md-weight: 500;
+
+  /* Display — Source Sans 3 Bold */
+  --uds-text-display-md-size:   48px;
+  --uds-text-display-md-lh:     56px;
+  --uds-text-display-md-weight: 700;
+
+  /* ─────────────────────────────────────────────
+   * TYPOGRAPHY — Source Serif 4 (editorial serif)
+   * ───────────────────────────────────────────── */
+  --uds-text-serif-xxs-size:  10px;
+  --uds-text-serif-xxs-lh:    12px;
+
+  --uds-text-serif-xs-size:   12px;
+  --uds-text-serif-xs-lh:     14px;
+
+  --uds-text-serif-sm-size:   14px;
+  --uds-text-serif-sm-lh:     20px;
+
+  --uds-text-serif-label-size:   16px;
+  --uds-text-serif-label-lh:     20px;
+  --uds-text-serif-label-weight: 500;
+
+  --uds-text-serif-label-bold-size:   16px;
+  --uds-text-serif-label-bold-lh:     20px;
+  --uds-text-serif-label-bold-weight: 600;
+
+  --uds-text-serif-body-size: 18px;
+  --uds-text-serif-body-lh:   20px;
+
+  --uds-text-serif-heading-sm-size:   18px;
+  --uds-text-serif-heading-sm-lh:     20px;
+  --uds-text-serif-heading-sm-weight: 600;
+
+  --uds-text-serif-heading-md-size:   20px;
+  --uds-text-serif-heading-md-lh:     24px;
+  --uds-text-serif-heading-md-weight: 500;
+
+  --uds-text-serif-heading-md-bold-size:   20px;
+  --uds-text-serif-heading-md-bold-lh:     24px;
+  --uds-text-serif-heading-md-bold-weight: 600;
+
+  /* ─────────────────────────────────────────────
+   * TYPOGRAPHY — Gamay (brand display, hero/marketing only)
+   * Use sparingly. Not for UI components.
+   * ───────────────────────────────────────────── */
+  --uds-text-display-gamay-sm-size:   20px;
+  --uds-text-display-gamay-sm-lh:     120%;
+
+  --uds-text-display-gamay-md-size:   24px;
+  --uds-text-display-gamay-md-lh:     120%;
+
+  --uds-text-display-gamay-lg-size:   32px;
+  --uds-text-display-gamay-lg-lh:     100%;
+
+  --uds-text-display-gamay-xl-size:   40px;
+  --uds-text-display-gamay-xl-lh:     100%;
+
+  --uds-text-display-gamay-2xl-size:  64px;
+  --uds-text-display-gamay-2xl-lh:    100%;
+
+  --uds-text-display-gamay-3xl-size:  76px;
+  --uds-text-display-gamay-3xl-lh:    100%;
+
+}
+
+
+/* ─────────────────────────────────────────────
+ * DARK MODE
+ * Override alias values here. Primitives do not change.
+ * Expand this section once dark mode is formally scoped.
+ * ───────────────────────────────────────────── */
+[data-theme="dark"] {
+  --uds-color-superficie-base:         var(--uds-negro-200);
+  --uds-color-superficie-tarjeta:      #2A2925; /* one step lighter than negro-200 — define as primitive if kept */
+  --uds-color-superficie-slot:         #232320;
+  --uds-color-superficie-seleccionado: #353530;
+
+  --uds-color-texto-primario:    var(--uds-blanco-100);
+  --uds-color-texto-secundario:  var(--uds-gris-100);
+  --uds-color-texto-terciario:   var(--uds-gris-300);
+  --uds-color-texto-deshabilitado: var(--uds-gris-700);
+  --uds-color-texto-invertido:   var(--uds-negro-200);
+  --uds-color-texto-display:     var(--uds-blanco-puro);
+
+  --uds-color-boton-primario-fondo: var(--uds-blanco-100);
+  --uds-color-boton-primario-texto: var(--uds-negro-200);
+
+  --uds-color-borde-etiqueta: var(--uds-gris-600);
+  --uds-color-borde-sutil:    var(--uds-gris-700);
+}

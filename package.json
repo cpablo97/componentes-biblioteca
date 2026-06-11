@@ -1,0 +1,35 @@
+{
+  "name": "componentes-biblioteca",
+  "version": "1.0.0",
+  "description": "Componentes para el sitio web de la biblioteca de la Universidad de los Andes",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cpablo97/componentes-biblioteca.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/cpablo97/componentes-biblioteca/issues"
+  },
+  "homepage": "https://github.com/cpablo97/componentes-biblioteca#readme",
+  "devDependencies": {
+    "@chromatic-com/storybook": "^5.2.1",
+    "@storybook/addon-a11y": "^10.4.4",
+    "@storybook/addon-docs": "^10.4.4",
+    "@storybook/addon-vitest": "^10.4.4",
+    "@storybook/html-vite": "^10.4.4",
+    "@vitest/browser-playwright": "^4.1.8",
+    "@vitest/coverage-v8": "^4.1.8",
+    "playwright": "^1.60.0",
+    "storybook": "^10.4.4",
+    "vitest": "^4.1.8"
+  }
+}

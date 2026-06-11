@@ -1,0 +1,142 @@
+/**
+ * Uniandes Design System — Primitives
+ * Raw values. No semantic meaning. Never reference these directly in components.
+ * All component and layout styles must use aliases from aliases.css.
+ *
+ * Sources: token-audit.json extracted from Figma file fFyS7KbenVJZc9EJ8wTZWC
+ * Audited: 2026-06-11
+ *
+ * ⚠ OPEN ITEMS (require Figma team decision before resolving):
+ *   — spacing-xxs / xs / md / lg / xl: values unresolved (external library alias).
+ *     These are marked as TODO below. Fill in from the source library before shipping.
+ *   — #1F1F1C (870 nodes) vs negro-100 (#1F1E1C): off-by-one in Figma.
+ *     The token is defined as #1F1E1C here. All Figma nodes must be rebounded to the variable.
+ *   — #FCFCFA (57 nodes) vs blanco-100 (#FCFBFA): same off-by-one issue.
+ */
+
+:root {
+
+  /* ─────────────────────────────────────────────
+   * NEGRO — dark neutrals
+   * ───────────────────────────────────────────── */
+  --uds-negro-100: #1F1E1C; /* primary dark text, icons */
+  --uds-negro-200: #191916; /* deepest black — button fills, strong borders */
+  --uds-negro-puro: #000000; /* pure black — Gamay display, image overlays */
+
+
+  /* ─────────────────────────────────────────────
+   * BLANCO — light neutrals
+   * ───────────────────────────────────────────── */
+  --uds-blanco-100: #FCFBFA; /* button text, card body */
+  --uds-blanco-puro: #FFFFFF; /* base white (external lib: Colors/Base/white) */
+
+
+  /* ─────────────────────────────────────────────
+   * CREMA — warm off-white surface palette
+   * ───────────────────────────────────────────── */
+  --uds-crema-50:  #F5F5F2; /* card and slot backgrounds (hardcoded in Figma — distinct from crema-100) */
+  --uds-crema-100: #F7F6F0; /* card surface (officially tokenized as crema/100) */
+  --uds-crema-200: #ECEAE3; /* selected/hover surface */
+
+
+  /* ─────────────────────────────────────────────
+   * GRIS — gray scale (warm-tinted)
+   * ───────────────────────────────────────────── */
+  --uds-gris-100: #BAB9B3; /* overlay text, disabled states */
+  --uds-gris-200: #CFCFCF; /* skeleton/placeholder fills (distinct from gris-300) */
+  --uds-gris-300: #C4C4C4; /* image placeholder (officially tokenized as gris/300) */
+  --uds-gris-400: #8A8984; /* placeholder icons — high usage (240×), no token in Figma */
+  --uds-gris-500: #6B6B68; /* secondary text (officially tokenized as gris/500) */
+  --uds-gris-500-alt: #73726D; /* event state text — close to gris-500, consolidate or distinguish */
+  --uds-gris-600: #595959; /* description text, secondary labels — high usage (239×) */
+  --uds-gris-700: #4D4D4C; /* labels, link buttons */
+
+
+  /* ─────────────────────────────────────────────
+   * AMARILLO — Uniandes brand yellow
+   * ───────────────────────────────────────────── */
+  --uds-amarillo-100: #FFE41E; /* brand yellow — hero vectors, accents */
+  --uds-amarillo-900: #4D4500; /* tag text on yellow background */
+
+
+  /* ─────────────────────────────────────────────
+   * AZUL MARINO — role/cargo accent
+   * ───────────────────────────────────────────── */
+  --uds-azul-marino-100: #252B37; /* cargo/role labels in person cards */
+
+
+  /* ─────────────────────────────────────────────
+   * VIOLETA — IA Assistant / Special feature palette
+   * ───────────────────────────────────────────── */
+  --uds-violeta-50:  #EEEDFE;
+  --uds-violeta-300: #BA92FF;
+  --uds-violeta-600: #483EAD;
+  --uds-violeta-700: #2E2499;
+  --uds-violeta-900: #230F46;
+
+
+  /* ─────────────────────────────────────────────
+   * COLOR DE BLUR — modal/overlay scrim
+   * ───────────────────────────────────────────── */
+  --uds-negro-blur: rgba(64, 63, 63, 0.5); /* #40403F at 50% alpha */
+
+
+  /* ─────────────────────────────────────────────
+   * BORDER RADIUS
+   * ───────────────────────────────────────────── */
+  --uds-radius-xs: 2px;  /* tags, chips, small UI elements — 126 uses */
+  --uds-radius-sm: 5px;  /* buttons, inputs — 26 uses */
+  --uds-radius-lg: 16px; /* card containers, panels — 110 uses */
+  --uds-radius-xl: 20px; /* large containers, hero sections — 18 uses */
+
+
+  /* ─────────────────────────────────────────────
+   * SHADOWS
+   * ───────────────────────────────────────────── */
+  --uds-shadow-lateral: 4px 0px 4px 0px rgba(0, 0, 0, 0.25);
+  --uds-shadow-soft:    4px 4px 15px 0px rgba(0, 0, 0, 0.10);
+
+
+  /* ─────────────────────────────────────────────
+   * SPACING — component-semantic (resolved from Figma Espaciado collection)
+   * ───────────────────────────────────────────── */
+  --uds-spacing-etiqueta-v:      4px;
+  --uds-spacing-contenido-gap:   8px;
+  --uds-spacing-etiqueta-h:      8px;
+  --uds-spacing-acciones-gap:    12px;
+  --uds-spacing-boton-secundario-v: 12px;
+  --uds-spacing-boton-secundario-h: 20px;
+  --uds-spacing-contenido-relleno: 20px;
+  --uds-spacing-boton-primario-v: 16px;
+  --uds-spacing-boton-primario-h: 24px;
+
+  /* ─────────────────────────────────────────────
+   * SPACING — generic scale (external library — values unresolved)
+   * TODO: fill in once the source library is accessible.
+   * ───────────────────────────────────────────── */
+  --uds-spacing-xxs: ; /* TODO — alias to external lib: VariableID 6348:143 */
+  --uds-spacing-xs:  ; /* TODO — alias to external lib: VariableID 6348:188 */
+  --uds-spacing-md:  ; /* TODO — alias to external lib: VariableID 6348:142 */
+  --uds-spacing-lg:  ; /* TODO — alias to external lib: VariableID 6348:177 */
+  --uds-spacing-xl:  ; /* TODO — alias to external lib: VariableID 6348:149 */
+
+
+  /* ─────────────────────────────────────────────
+   * TYPOGRAPHY — font families
+   * ───────────────────────────────────────────── */
+  --uds-font-sans:    'Source Sans 3', sans-serif;
+  --uds-font-serif:   'Source Serif 4', serif;
+  --uds-font-display: 'Gamay', sans-serif;
+
+
+  /* ─────────────────────────────────────────────
+   * TYPOGRAPHY — icon sizes (Material Symbols Outlined)
+   * ───────────────────────────────────────────── */
+  --uds-icon-size-sm:  16px;
+  --uds-icon-size-md:  20px;
+  --uds-icon-size-lg:  24px;
+  --uds-icon-size-xl:  40px;
+  --uds-icon-size-2xl: 44px;
+  --uds-icon-size-3xl: 48px;
+
+}

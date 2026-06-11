@@ -1,0 +1,988 @@
+{
+  "_meta": {
+    "file": "Entrega - Biblioteca web",
+    "fileKey": "fFyS7KbenVJZc9EJ8wTZWC",
+    "page": "🟢 Componentes (4:6)",
+    "auditedAt": "2026-06-11",
+    "sources": [
+      "figma_get_variables (Desktop Bridge)",
+      "figma_execute – fill/radius/shadow traversal",
+      "figma_execute – typography traversal",
+      "figma_get_file_data – page listing"
+    ],
+    "pages": [
+      "🌅 Cover (0:1)",
+      "👀 Resumen (4:3)",
+      "📈 Estado (4:2)",
+      "✳️ Prototipo (858:2800)",
+      "ℹ️ Arquitectura de infromación (952:68584)",
+      "🟢 Componentes (4:6)",
+      "🟢 Secciones (4:7)",
+      "🧰 Herramientas (4:14)",
+      "🔍 Referentes (4:9)",
+      "🎳 Playground (4:11)",
+      "🗄️ Archivo (4:12)",
+      "🗑️ Caneca (4:13)"
+    ],
+    "note_on_usageCount": "usageCount = number of SOLID fill paints found on page 4:6 resolving to that exact hex (variable-bound and hardcoded combined). 0 means the color is defined as a variable but its resolved hex was not observed directly in component fills on this page — it may still be applied via strokes, effects, or on other pages."
+  },
+
+  "colors": [
+    {
+      "_group": "Primitivos — raw palette (VariableCollectionId:76:231)",
+      "figmaName": "crema/100",
+      "hex": "#F7F6F0",
+      "usageCount": 3,
+      "suggestedToken": "--uds-color-crema-100",
+      "cssVar": "var(--crema-100)"
+    },
+    {
+      "figmaName": "crema/200",
+      "hex": "#ECEAE3",
+      "usageCount": 0,
+      "suggestedToken": "--uds-color-crema-200",
+      "cssVar": "var(--crema-200)"
+    },
+    {
+      "figmaName": "negro/100",
+      "hex": "#1F1E1C",
+      "usageCount": 0,
+      "suggestedToken": "--uds-color-negro-100",
+      "cssVar": "var(--negro-100)"
+    },
+    {
+      "figmaName": "negro/200",
+      "hex": "#191916",
+      "usageCount": 37,
+      "suggestedToken": "--uds-color-negro-200",
+      "cssVar": "var(--negro-200)"
+    },
+    {
+      "figmaName": "blanco/100",
+      "hex": "#FCFBFA",
+      "usageCount": 0,
+      "suggestedToken": "--uds-color-blanco-100",
+      "cssVar": "var(--blanco-100)"
+    },
+    {
+      "figmaName": "gris/300",
+      "hex": "#C4C4C4",
+      "usageCount": 0,
+      "suggestedToken": "--uds-color-gris-300",
+      "cssVar": "var(--gris-300)"
+    },
+    {
+      "figmaName": "gris/500",
+      "hex": "#6B6B68",
+      "usageCount": 0,
+      "suggestedToken": "--uds-color-gris-500",
+      "cssVar": "var(--gris-500)"
+    },
+
+    {
+      "_group": "Color — semantic aliases (VariableCollectionId:77:231)",
+      "figmaName": "color/superficie/tarjeta",
+      "hex": "#F7F6F0",
+      "alias": "crema/100",
+      "usageCount": 3,
+      "suggestedToken": "--uds-color-superficie-tarjeta",
+      "cssVar": "var(--color-superficie-tarjeta)",
+      "scope": "FRAME_FILL, SHAPE_FILL"
+    },
+    {
+      "figmaName": "color/superficie/seleccionado",
+      "hex": "#ECEAE3",
+      "alias": "crema/200",
+      "usageCount": 0,
+      "suggestedToken": "--uds-color-superficie-seleccionado",
+      "cssVar": "var(--color-superficie-seleccionado)",
+      "scope": "FRAME_FILL, SHAPE_FILL"
+    },
+    {
+      "figmaName": "color/texto/primario",
+      "hex": "#1F1E1C",
+      "alias": "negro/100",
+      "usageCount": 0,
+      "suggestedToken": "--uds-color-texto-primario",
+      "cssVar": "var(--color-texto-primario)",
+      "scope": "TEXT_FILL"
+    },
+    {
+      "figmaName": "color/borde/etiqueta",
+      "hex": "#191916",
+      "alias": "negro/200",
+      "usageCount": 37,
+      "suggestedToken": "--uds-color-borde-etiqueta",
+      "cssVar": "var(--color-borde-etiqueta)",
+      "scope": "STROKE_COLOR"
+    },
+    {
+      "figmaName": "color/boton/primario/fondo",
+      "hex": "#191916",
+      "alias": "negro/200",
+      "usageCount": 37,
+      "suggestedToken": "--uds-color-boton-primario-fondo",
+      "cssVar": "var(--color-boton-primario-fondo)",
+      "scope": "FRAME_FILL, SHAPE_FILL"
+    },
+    {
+      "figmaName": "color/boton/primario/texto",
+      "hex": "#FCFBFA",
+      "alias": "blanco/100",
+      "usageCount": 0,
+      "suggestedToken": "--uds-color-boton-primario-texto",
+      "cssVar": "var(--color-boton-primario-texto)",
+      "scope": "TEXT_FILL"
+    },
+    {
+      "figmaName": "color/imagen/placeholder",
+      "hex": "#C4C4C4",
+      "alias": "gris/300",
+      "usageCount": 0,
+      "suggestedToken": "--uds-color-imagen-placeholder",
+      "cssVar": "var(--color-imagen-placeholder)",
+      "scope": "FRAME_FILL, SHAPE_FILL"
+    },
+    {
+      "figmaName": "color/imagen/icono",
+      "hex": "#6B6B68",
+      "alias": "gris/500",
+      "usageCount": 0,
+      "suggestedToken": "--uds-color-imagen-icono",
+      "cssVar": "var(--color-imagen-icono)",
+      "scope": "SHAPE_FILL, TEXT_FILL"
+    },
+    {
+      "figmaName": "Color de blur",
+      "hex": "#40403F",
+      "alpha": 0.5,
+      "hexWithAlpha": "#40403F80",
+      "usageCount": 8,
+      "suggestedToken": "--uds-color-blur",
+      "cssVar": "none (no codeSyntax defined)",
+      "scope": "ALL_SCOPES",
+      "note": "Standalone raw value — not aliased to any primitive"
+    },
+
+    {
+      "_group": "_Primitives — external/library (VariableCollectionId:952:65610)",
+      "figmaName": "Colors/Base/white",
+      "hex": "#FFFFFF",
+      "usageCount": 42,
+      "suggestedToken": "--uds-color-blanco-puro",
+      "cssVar": "none (no codeSyntax defined)",
+      "note": "Defined in _Primitives but has no alias in the semantic Color collection"
+    },
+
+    {
+      "_group": "Hardcoded fills — NOT in any variable (found in component traversal)",
+      "figmaName": "(hardcoded) near-negro/100",
+      "hex": "#1F1F1C",
+      "usageCount": 870,
+      "suggestedToken": "--uds-color-negro-100",
+      "note": "Off by 1 in green channel vs negro/100 (#1F1E1C). Nodes are using a hardcoded value instead of the variable. Highest-count discrepancy in the file."
+    },
+    {
+      "figmaName": "(hardcoded) gris-medio-claro",
+      "hex": "#8A8984",
+      "usageCount": 240,
+      "suggestedToken": "--uds-color-gris-400",
+      "note": "PlaceholderIcon fills — heavy use, no token defined"
+    },
+    {
+      "figmaName": "(hardcoded) gris-medio",
+      "hex": "#595959",
+      "usageCount": 239,
+      "suggestedToken": "--uds-color-gris-600",
+      "note": "Descriptions and secondary labels"
+    },
+    {
+      "figmaName": "(hardcoded) negro-puro",
+      "hex": "#000000",
+      "usageCount": 101,
+      "suggestedToken": "--uds-color-negro-puro",
+      "note": "Gamay display text and image overlays — should map to a token"
+    },
+    {
+      "figmaName": "(hardcoded) gris-claro",
+      "hex": "#CFCFCF",
+      "usageCount": 97,
+      "suggestedToken": "--uds-color-gris-200",
+      "note": "Rectangle placeholder/skeleton fills — distinct from gris/300 (#C4C4C4)"
+    },
+    {
+      "figmaName": "(hardcoded) gris-cálido-medio",
+      "hex": "#73726D",
+      "usageCount": 92,
+      "suggestedToken": "--uds-color-gris-500-alt",
+      "note": "Event state and TÍTULO text — close to gris/500 (#6B6B68) but different"
+    },
+    {
+      "figmaName": "(hardcoded) gris-oscuro",
+      "hex": "#4D4D4C",
+      "usageCount": 91,
+      "suggestedToken": "--uds-color-gris-700",
+      "note": "Labels and link buttons"
+    },
+    {
+      "figmaName": "(hardcoded) crema-claro",
+      "hex": "#F5F5F2",
+      "usageCount": 75,
+      "suggestedToken": "--uds-color-crema-50",
+      "note": "Card and slot backgrounds — close to crema/100 (#F7F6F0) but different"
+    },
+    {
+      "figmaName": "(hardcoded) near-blanco/100",
+      "hex": "#FCFCFA",
+      "usageCount": 57,
+      "suggestedToken": "--uds-color-blanco-100",
+      "note": "Off by 1 in green channel vs blanco/100 (#FCFBFA). Button text and card body fills not bound to variable."
+    },
+    {
+      "figmaName": "(hardcoded) amarillo-marca",
+      "hex": "#FFE41E",
+      "usageCount": 46,
+      "suggestedToken": "--uds-color-amarillo-100",
+      "note": "Uniandes brand yellow — used in hero vectors. Significant brand color, no token."
+    },
+    {
+      "figmaName": "(hardcoded) gris-cálido-claro",
+      "hex": "#BAB9B3",
+      "usageCount": 37,
+      "suggestedToken": "--uds-color-gris-100",
+      "note": "Overlay text and disabled-state elements"
+    },
+    {
+      "figmaName": "(hardcoded) amarillo-oscuro",
+      "hex": "#4D4500",
+      "usageCount": 34,
+      "suggestedToken": "--uds-color-amarillo-900",
+      "note": "Tag text on yellow background — pairs with #FFE41E"
+    },
+    {
+      "figmaName": "(hardcoded) azul-marino",
+      "hex": "#252B37",
+      "usageCount": 12,
+      "suggestedToken": "--uds-color-azul-marino-100",
+      "note": "Cargo/role labels in person cards"
+    },
+    {
+      "figmaName": "(hardcoded) violeta-claro",
+      "hex": "#BA92FF",
+      "usageCount": 10,
+      "suggestedToken": "--uds-color-violeta-300",
+      "note": "IA Assistant feature — 5-color purple system, none tokenized"
+    },
+    {
+      "figmaName": "(hardcoded) violeta-pálido",
+      "hex": "#EEEDFE",
+      "usageCount": 6,
+      "suggestedToken": "--uds-color-violeta-50",
+      "note": "IA Assistant / Special tag background"
+    },
+    {
+      "figmaName": "(hardcoded) violeta-profundo",
+      "hex": "#2E2499",
+      "usageCount": 6,
+      "suggestedToken": "--uds-color-violeta-700",
+      "note": "Tag text on special backgrounds"
+    },
+    {
+      "figmaName": "(hardcoded) violeta-oscuro",
+      "hex": "#230F46",
+      "usageCount": 5,
+      "suggestedToken": "--uds-color-violeta-900",
+      "note": "Dark button variant (probably IA feature)"
+    },
+    {
+      "figmaName": "(hardcoded) violeta-medio",
+      "hex": "#483EAD",
+      "usageCount": 5,
+      "suggestedToken": "--uds-color-violeta-600",
+      "note": "Icon fills in IA Assistant section"
+    }
+  ],
+
+  "spacing": [
+    {
+      "_group": "Espaciado — semantic component spacing (VariableCollectionId:78:231)",
+      "figmaName": "contenido/relleno",
+      "value": "20px",
+      "usageCount": 0,
+      "suggestedToken": "--uds-spacing-contenido-relleno",
+      "cssVar": "var(--espaciado-contenido-relleno)",
+      "scope": "WIDTH_HEIGHT, GAP"
+    },
+    {
+      "figmaName": "contenido/gap",
+      "value": "8px",
+      "usageCount": 0,
+      "suggestedToken": "--uds-spacing-contenido-gap",
+      "cssVar": "var(--espaciado-contenido-gap)",
+      "scope": "GAP"
+    },
+    {
+      "figmaName": "acciones/gap",
+      "value": "12px",
+      "usageCount": 0,
+      "suggestedToken": "--uds-spacing-acciones-gap",
+      "cssVar": "var(--espaciado-acciones-gap)",
+      "scope": "GAP"
+    },
+    {
+      "figmaName": "etiqueta/v",
+      "value": "4px",
+      "usageCount": 0,
+      "suggestedToken": "--uds-spacing-etiqueta-v",
+      "cssVar": "var(--espaciado-etiqueta-v)",
+      "scope": "WIDTH_HEIGHT, GAP"
+    },
+    {
+      "figmaName": "etiqueta/h",
+      "value": "8px",
+      "usageCount": 0,
+      "suggestedToken": "--uds-spacing-etiqueta-h",
+      "cssVar": "var(--espaciado-etiqueta-h)",
+      "scope": "WIDTH_HEIGHT, GAP"
+    },
+    {
+      "figmaName": "boton-primario/v",
+      "value": "16px",
+      "usageCount": 0,
+      "suggestedToken": "--uds-spacing-boton-primario-v",
+      "cssVar": "var(--espaciado-boton-primario-v)",
+      "scope": "WIDTH_HEIGHT, GAP"
+    },
+    {
+      "figmaName": "boton-primario/h",
+      "value": "24px",
+      "usageCount": 0,
+      "suggestedToken": "--uds-spacing-boton-primario-h",
+      "cssVar": "var(--espaciado-boton-primario-h)",
+      "scope": "WIDTH_HEIGHT, GAP"
+    },
+    {
+      "figmaName": "boton-secundario/v",
+      "value": "12px",
+      "usageCount": 0,
+      "suggestedToken": "--uds-spacing-boton-secundario-v",
+      "cssVar": "var(--espaciado-boton-secundario-v)",
+      "scope": "WIDTH_HEIGHT, GAP"
+    },
+    {
+      "figmaName": "boton-secundario/h",
+      "value": "20px",
+      "usageCount": 0,
+      "suggestedToken": "--uds-spacing-boton-secundario-h",
+      "cssVar": "var(--espaciado-boton-secundario-h)",
+      "scope": "WIDTH_HEIGHT, GAP"
+    },
+    {
+      "_group": "3. Spacing — unresolved external library aliases (VariableCollectionId:952:65590)",
+      "figmaName": "spacing-xxs",
+      "value": "unresolved — alias to external library",
+      "usageCount": 0,
+      "suggestedToken": "--uds-spacing-xxs",
+      "note": "Resolves to VariableID:5fd6aa38.../6348:143 — external lib not available in this context"
+    },
+    {
+      "figmaName": "spacing-xs",
+      "value": "unresolved — alias to external library",
+      "usageCount": 0,
+      "suggestedToken": "--uds-spacing-xs",
+      "note": "Resolves to VariableID:60c2d6c9.../6348:188"
+    },
+    {
+      "figmaName": "spacing-md",
+      "value": "unresolved — alias to external library",
+      "usageCount": 0,
+      "suggestedToken": "--uds-spacing-md",
+      "note": "Resolves to VariableID:bee4c87c.../6348:142"
+    },
+    {
+      "figmaName": "spacing-lg",
+      "value": "unresolved — alias to external library",
+      "usageCount": 0,
+      "suggestedToken": "--uds-spacing-lg",
+      "note": "Resolves to VariableID:a65defc0.../6348:177"
+    },
+    {
+      "figmaName": "spacing-xl",
+      "value": "unresolved — alias to external library",
+      "usageCount": 0,
+      "suggestedToken": "--uds-spacing-xl",
+      "note": "Resolves to VariableID:b2e78d24.../6348:149"
+    }
+  ],
+
+  "typography": [
+    {
+      "_note": "Icon font excluded from structured entries below. Material Symbols Outlined is used at sizes 16, 20, 24, 40, 44, 48 — consider --uds-icon-size-* tokens.",
+      "_group": "Source Sans 3 — primary UI font"
+    },
+    {
+      "figmaName": "body-xxs",
+      "family": "Source Sans 3",
+      "size": "10px",
+      "weight": "Regular",
+      "lineHeight": "12px",
+      "usageCount": 95,
+      "sample": "Event State",
+      "suggestedToken": "--uds-font-body-xxs"
+    },
+    {
+      "figmaName": "body-xs",
+      "family": "Source Sans 3",
+      "size": "12px",
+      "weight": "Regular",
+      "lineHeight": "16px",
+      "usageCount": 103,
+      "sample": "Tag text",
+      "suggestedToken": "--uds-font-body-xs"
+    },
+    {
+      "figmaName": "body-xs-tight",
+      "family": "Source Sans 3",
+      "size": "12px",
+      "weight": "Regular",
+      "lineHeight": "14px",
+      "usageCount": 72,
+      "sample": "Hora",
+      "suggestedToken": "--uds-font-body-xs-tight"
+    },
+    {
+      "figmaName": "body-xs-fixed",
+      "family": "Source Sans 3",
+      "size": "12px",
+      "weight": "Regular",
+      "lineHeight": "12px",
+      "usageCount": 2,
+      "sample": "Info Text",
+      "suggestedToken": "--uds-font-body-xs-fixed"
+    },
+    {
+      "figmaName": "tag",
+      "family": "Source Sans 3",
+      "size": "14px",
+      "weight": "Regular",
+      "lineHeight": "14px",
+      "usageCount": 54,
+      "sample": "Tag Text",
+      "suggestedToken": "--uds-font-tag"
+    },
+    {
+      "figmaName": "body-sm-link",
+      "family": "Source Sans 3",
+      "size": "14px",
+      "weight": "Regular",
+      "lineHeight": "16px",
+      "usageCount": 18,
+      "sample": "Link button",
+      "suggestedToken": "--uds-font-body-sm-link"
+    },
+    {
+      "figmaName": "body-sm",
+      "family": "Source Sans 3",
+      "size": "14px",
+      "weight": "Regular",
+      "lineHeight": "20px",
+      "usageCount": 16,
+      "sample": "Disclaimer",
+      "suggestedToken": "--uds-font-body-sm"
+    },
+    {
+      "figmaName": "body-md",
+      "family": "Source Sans 3",
+      "size": "16px",
+      "weight": "Regular",
+      "lineHeight": "24px",
+      "usageCount": 132,
+      "sample": "Label",
+      "suggestedToken": "--uds-font-body-md"
+    },
+    {
+      "figmaName": "body-md-compact",
+      "family": "Source Sans 3",
+      "size": "16px",
+      "weight": "Regular",
+      "lineHeight": "20px",
+      "usageCount": 42,
+      "sample": "Instructions",
+      "suggestedToken": "--uds-font-body-md-compact"
+    },
+    {
+      "figmaName": "body-md-tight",
+      "family": "Source Sans 3",
+      "size": "16px",
+      "weight": "Regular",
+      "lineHeight": "16px",
+      "usageCount": 11,
+      "sample": "Link button",
+      "suggestedToken": "--uds-font-body-md-tight"
+    },
+    {
+      "figmaName": "label-md",
+      "family": "Source Sans 3",
+      "size": "16px",
+      "weight": "Medium",
+      "lineHeight": "24px",
+      "usageCount": 37,
+      "sample": "ANTETÍTULO",
+      "suggestedToken": "--uds-font-label-md"
+    },
+    {
+      "figmaName": "label-md-compact",
+      "family": "Source Sans 3",
+      "size": "16px",
+      "weight": "Medium",
+      "lineHeight": "20px",
+      "usageCount": 8,
+      "sample": "ANTETÍTULO",
+      "suggestedToken": "--uds-font-label-md-compact"
+    },
+    {
+      "figmaName": "button-sm",
+      "family": "Source Sans 3",
+      "size": "16px",
+      "weight": "SemiBold",
+      "lineHeight": "16px",
+      "usageCount": 27,
+      "sample": "Cerrar",
+      "suggestedToken": "--uds-font-button-sm"
+    },
+    {
+      "figmaName": "search-placeholder",
+      "family": "Source Sans 3",
+      "size": "18px",
+      "weight": "Regular",
+      "lineHeight": "20px",
+      "usageCount": 6,
+      "sample": "Search Placeholder",
+      "suggestedToken": "--uds-font-search-placeholder"
+    },
+    {
+      "figmaName": "heading-sm",
+      "family": "Source Sans 3",
+      "size": "18px",
+      "weight": "SemiBold",
+      "lineHeight": "20px",
+      "usageCount": 20,
+      "sample": "Cerrar",
+      "suggestedToken": "--uds-font-heading-sm"
+    },
+    {
+      "figmaName": "heading-sm-tight",
+      "family": "Source Sans 3",
+      "size": "18px",
+      "weight": "SemiBold",
+      "lineHeight": "18px",
+      "usageCount": 20,
+      "sample": "Label",
+      "suggestedToken": "--uds-font-heading-sm-tight",
+      "note": "Duplicate size/weight with different line-heights (18 vs 20) — consolidate to one"
+    },
+    {
+      "figmaName": "body-lg",
+      "family": "Source Sans 3",
+      "size": "20px",
+      "weight": "Regular",
+      "lineHeight": "32px",
+      "usageCount": 32,
+      "sample": "Description",
+      "suggestedToken": "--uds-font-body-lg"
+    },
+    {
+      "figmaName": "heading-xs",
+      "family": "Source Sans 3",
+      "size": "20px",
+      "weight": "Medium",
+      "lineHeight": "24px",
+      "usageCount": 24,
+      "sample": "ANTETÍTULO",
+      "suggestedToken": "--uds-font-heading-xs"
+    },
+    {
+      "figmaName": "heading-xs-bold",
+      "family": "Source Sans 3",
+      "size": "20px",
+      "weight": "SemiBold",
+      "lineHeight": "24px",
+      "usageCount": 6,
+      "sample": "Titles",
+      "suggestedToken": "--uds-font-heading-xs-bold"
+    },
+    {
+      "figmaName": "body-xl-bold",
+      "family": "Source Sans 3",
+      "size": "20px",
+      "weight": "Bold",
+      "lineHeight": "32px",
+      "usageCount": 8,
+      "sample": "Heading",
+      "suggestedToken": "--uds-font-body-xl-bold"
+    },
+    {
+      "figmaName": "card-title-sm",
+      "family": "Source Sans 3",
+      "size": "24px",
+      "weight": "Medium",
+      "lineHeight": "28px",
+      "usageCount": 24,
+      "sample": "Card Title",
+      "suggestedToken": "--uds-font-card-title-sm"
+    },
+    {
+      "figmaName": "card-title-md",
+      "family": "Source Sans 3",
+      "size": "24px",
+      "weight": "Medium",
+      "lineHeight": "32px",
+      "usageCount": 8,
+      "sample": "TÍTULO",
+      "suggestedToken": "--uds-font-card-title-md"
+    },
+    {
+      "figmaName": "filter-heading",
+      "family": "Source Sans 3",
+      "size": "24px",
+      "weight": "SemiBold",
+      "lineHeight": "28px",
+      "usageCount": 2,
+      "sample": "Filter by",
+      "suggestedToken": "--uds-font-filter-heading"
+    },
+    {
+      "figmaName": "heading-lg",
+      "family": "Source Sans 3",
+      "size": "32px",
+      "weight": "SemiBold",
+      "lineHeight": "36px",
+      "usageCount": 37,
+      "sample": "Component Label",
+      "suggestedToken": "--uds-font-heading-lg"
+    },
+    {
+      "figmaName": "heading-lg-tight",
+      "family": "Source Sans 3",
+      "size": "32px",
+      "weight": "Medium",
+      "lineHeight": "32px",
+      "usageCount": 24,
+      "sample": "TÍTULO",
+      "suggestedToken": "--uds-font-heading-lg-tight"
+    },
+    {
+      "figmaName": "display-md",
+      "family": "Source Sans 3",
+      "size": "48px",
+      "weight": "Bold",
+      "lineHeight": "56px",
+      "usageCount": 16,
+      "sample": "Title",
+      "suggestedToken": "--uds-font-display-md"
+    },
+
+    {
+      "_group": "Source Serif 4 — secondary/editorial serif"
+    },
+    {
+      "figmaName": "serif-xxs",
+      "family": "Source Serif 4",
+      "size": "10px",
+      "weight": "Regular",
+      "lineHeight": "12px",
+      "usageCount": 54,
+      "sample": "Mes inicio",
+      "suggestedToken": "--uds-font-serif-xxs"
+    },
+    {
+      "figmaName": "serif-xs",
+      "family": "Source Serif 4",
+      "size": "12px",
+      "weight": "Regular",
+      "lineHeight": "14px",
+      "usageCount": 18,
+      "sample": "Mes inicio",
+      "suggestedToken": "--uds-font-serif-xs"
+    },
+    {
+      "figmaName": "serif-xs-loose",
+      "family": "Source Serif 4",
+      "size": "12px",
+      "weight": "Regular",
+      "lineHeight": "20px",
+      "usageCount": 12,
+      "sample": "Description",
+      "suggestedToken": "--uds-font-serif-xs-loose",
+      "note": "12px with 20px line-height is unusually open — verify intent"
+    },
+    {
+      "figmaName": "serif-sm",
+      "family": "Source Serif 4",
+      "size": "14px",
+      "weight": "Regular",
+      "lineHeight": "20px",
+      "usageCount": 24,
+      "sample": "Description",
+      "suggestedToken": "--uds-font-serif-sm"
+    },
+    {
+      "figmaName": "serif-label",
+      "family": "Source Serif 4",
+      "size": "16px",
+      "weight": "Medium",
+      "lineHeight": "20px",
+      "usageCount": 12,
+      "sample": "Event Title",
+      "suggestedToken": "--uds-font-serif-label"
+    },
+    {
+      "figmaName": "serif-label-bold",
+      "family": "Source Serif 4",
+      "size": "16px",
+      "weight": "SemiBold",
+      "lineHeight": "20px",
+      "usageCount": 24,
+      "sample": "Fecha inicio",
+      "suggestedToken": "--uds-font-serif-label-bold"
+    },
+    {
+      "figmaName": "serif-body",
+      "family": "Source Serif 4",
+      "size": "18px",
+      "weight": "Regular",
+      "lineHeight": "20px",
+      "usageCount": 15,
+      "sample": "Event Title",
+      "suggestedToken": "--uds-font-serif-body"
+    },
+    {
+      "figmaName": "serif-heading-sm",
+      "family": "Source Serif 4",
+      "size": "18px",
+      "weight": "SemiBold",
+      "lineHeight": "20px",
+      "usageCount": 30,
+      "sample": "Fecha inicio",
+      "suggestedToken": "--uds-font-serif-heading-sm"
+    },
+    {
+      "figmaName": "serif-heading-md",
+      "family": "Source Serif 4",
+      "size": "20px",
+      "weight": "Medium",
+      "lineHeight": "24px",
+      "usageCount": 21,
+      "sample": "Event Title",
+      "suggestedToken": "--uds-font-serif-heading-md"
+    },
+    {
+      "figmaName": "serif-heading-md-bold",
+      "family": "Source Serif 4",
+      "size": "20px",
+      "weight": "SemiBold",
+      "lineHeight": "24px",
+      "usageCount": 18,
+      "sample": "Fecha inicio",
+      "suggestedToken": "--uds-font-serif-heading-md-bold"
+    },
+
+    {
+      "_group": "Gamay — brand display font (hero/marketing sections only)"
+    },
+    {
+      "figmaName": "display-gamay-editorial-sm",
+      "family": "Gamay",
+      "size": "20px",
+      "weight": "Editorial Medium",
+      "lineHeight": "120%",
+      "usageCount": 2,
+      "sample": "BIBLIOGUÍA...",
+      "suggestedToken": "--uds-font-display-gamay-editorial-sm"
+    },
+    {
+      "figmaName": "display-gamay-editorial-md",
+      "family": "Gamay",
+      "size": "24px",
+      "weight": "Editorial Medium",
+      "lineHeight": "120%",
+      "usageCount": 4,
+      "sample": "BIBLIOGUÍA...",
+      "suggestedToken": "--uds-font-display-gamay-editorial-md"
+    },
+    {
+      "figmaName": "display-gamay-editorial-lg",
+      "family": "Gamay",
+      "size": "32px",
+      "weight": "Editorial Light",
+      "lineHeight": "100%",
+      "usageCount": 2,
+      "sample": "Arquitectura y Diseño",
+      "suggestedToken": "--uds-font-display-gamay-editorial-lg"
+    },
+    {
+      "figmaName": "display-gamay-wide-thin-lg",
+      "family": "Gamay",
+      "size": "32px",
+      "weight": "Wide Thin",
+      "lineHeight": "100%",
+      "usageCount": 3,
+      "sample": "Arquitectura y Diseño",
+      "suggestedToken": "--uds-font-display-gamay-thin-lg"
+    },
+    {
+      "figmaName": "display-gamay-wide-bold-lg",
+      "family": "Gamay",
+      "size": "32px",
+      "weight": "Wide Bold",
+      "lineHeight": "100%",
+      "usageCount": 2,
+      "sample": "Bold text",
+      "suggestedToken": "--uds-font-display-gamay-bold-lg"
+    },
+    {
+      "figmaName": "display-gamay-wide-thin-xl",
+      "family": "Gamay",
+      "size": "40px",
+      "weight": "Wide Thin",
+      "lineHeight": "100%",
+      "usageCount": 2,
+      "sample": "Arquitectura y Diseño",
+      "suggestedToken": "--uds-font-display-gamay-thin-xl"
+    },
+    {
+      "figmaName": "display-gamay-wide-bold-xl",
+      "family": "Gamay",
+      "size": "40px",
+      "weight": "Wide Bold",
+      "lineHeight": "100%",
+      "usageCount": 1,
+      "sample": "Bold text",
+      "suggestedToken": "--uds-font-display-gamay-bold-xl"
+    },
+    {
+      "figmaName": "display-gamay-wide-thin-2xl",
+      "family": "Gamay",
+      "size": "64px",
+      "weight": "Wide Thin",
+      "lineHeight": "100%",
+      "usageCount": 2,
+      "sample": "Light text",
+      "suggestedToken": "--uds-font-display-gamay-thin-2xl"
+    },
+    {
+      "figmaName": "display-gamay-wide-bold-2xl",
+      "family": "Gamay",
+      "size": "64px",
+      "weight": "Wide Bold",
+      "lineHeight": "100%",
+      "usageCount": 2,
+      "sample": "Bold text",
+      "suggestedToken": "--uds-font-display-gamay-bold-2xl"
+    },
+    {
+      "figmaName": "display-gamay-wide-thin-3xl",
+      "family": "Gamay",
+      "size": "76px",
+      "weight": "Wide Thin",
+      "lineHeight": "100%",
+      "usageCount": 2,
+      "sample": "Light text",
+      "suggestedToken": "--uds-font-display-gamay-thin-3xl"
+    },
+    {
+      "figmaName": "display-gamay-wide-bold-3xl",
+      "family": "Gamay",
+      "size": "76px",
+      "weight": "Wide Bold",
+      "lineHeight": "100%",
+      "usageCount": 2,
+      "sample": "Bold text",
+      "suggestedToken": "--uds-font-display-gamay-bold-3xl"
+    }
+  ],
+
+  "radii": [
+    {
+      "figmaName": "(traversal) radius-xs",
+      "value": "2px",
+      "usageCount": 126,
+      "suggestedToken": "--uds-border-radius-xs",
+      "note": "Most common radius — tags, chips, small UI elements"
+    },
+    {
+      "figmaName": "(traversal) radius-lg",
+      "value": "16px",
+      "usageCount": 110,
+      "suggestedToken": "--uds-border-radius-lg",
+      "note": "Second most common — card containers and panels"
+    },
+    {
+      "figmaName": "(traversal) radius-sm",
+      "value": "5px",
+      "usageCount": 26,
+      "suggestedToken": "--uds-border-radius-sm",
+      "note": "Buttons and inputs"
+    },
+    {
+      "figmaName": "(traversal) radius-xl",
+      "value": "20px",
+      "usageCount": 18,
+      "suggestedToken": "--uds-border-radius-xl",
+      "note": "Large containers and hero sections"
+    }
+  ],
+
+  "shadows": [
+    {
+      "figmaName": "(traversal) shadow-lateral",
+      "value": "4px 0px 4px 0px rgba(0,0,0,0.25)",
+      "type": "DROP_SHADOW",
+      "offsetX": "4px",
+      "offsetY": "0px",
+      "blur": "4px",
+      "spread": "0px",
+      "color": "rgba(0,0,0,0.25)",
+      "usageCount": 4,
+      "suggestedToken": "--uds-shadow-lateral",
+      "note": "Lateral-only shadow (no vertical offset)"
+    },
+    {
+      "figmaName": "(traversal) shadow-soft",
+      "value": "4px 4px 15px 0px rgba(0,0,0,0.10)",
+      "type": "DROP_SHADOW",
+      "offsetX": "4px",
+      "offsetY": "4px",
+      "blur": "15px",
+      "spread": "0px",
+      "color": "rgba(0,0,0,0.10)",
+      "usageCount": 2,
+      "suggestedToken": "--uds-shadow-soft",
+      "note": "Soft ambient lift shadow"
+    }
+  ],
+
+  "flags": [
+    "CRITICAL — #1F1F1C used 870× but negro/100 token is #1F1E1C (green channel off by 1). The majority of dark text and icon nodes are hardcoded to the wrong value instead of using var(--negro-100) / var(--color-texto-primario).",
+    "CRITICAL — #FCFCFA used 57× but blanco/100 token is #FCFBFA (green channel off by 1). Button text and card body nodes are not bound to the variable.",
+    "HIGH — No Figma Styles defined (0 text styles, 0 color styles, 0 effect styles). All design decisions live only in variables or as hardcoded values — typography is entirely undocumented as named styles.",
+    "HIGH — #8A8984 (240 uses), #595959 (239 uses), #73726D (92 uses), #4D4D4C (91 uses), #BAB9B3 (37 uses) are all heavily-used grays with no corresponding token. The gray ramp has only gris/300 and gris/500 defined.",
+    "HIGH — Uniandes brand yellow #FFE41E (46 uses) has no token. It is a significant brand color, presumably the Uniandes amarillo, and should become --uds-color-amarillo-100 or similar.",
+    "HIGH — 5 spacing variables in '3. Spacing' (spacing-xxs through spacing-xl) resolve to external library aliases. Their actual px values cannot be determined without access to those libraries — cross-reference before writing tokens.",
+    "MEDIUM — #CFCFCF (97 uses) and gris/300 (#C4C4C4) are different values. Skeleton/placeholder rectangles use #CFCFCF not the defined gris/300 token.",
+    "MEDIUM — #F5F5F2 (75 uses) and crema/100 (#F7F6F0) are different values. Card and slot backgrounds use a cooler off-white not matching the official warm crema.",
+    "MEDIUM — Source Sans 3 at 15.567px found 22 times (sample: 'Tag text'). Fractional font size indicates a node was scaled via transform rather than having its font size set directly.",
+    "MEDIUM — Source Sans 3 Bold at 20.583px found 3 times (sample: 'Option 1'). Same fractional-size issue.",
+    "MEDIUM — Source Sans 3 / SemiBold / 18px has two variants: lh:20px (×20) and lh:18px (×20). These should be consolidated into one token.",
+    "MEDIUM — Source Sans 3 / Medium / 20px has two line-heights: 24px (×24) and 25px (×24). The 25px value is non-standard and likely an error.",
+    "MEDIUM — Source Sans 3 / Medium / 16px has three line-heights: 24px, 20px, and 25px. The 25px variant (×8) is suspect.",
+    "MEDIUM — A 5-color purple system (violeta-50 through violeta-900: #EEEDFE, #483EAD, #2E2499, #BA92FF, #230F46) appears in IA Assistant and Special tag components with no tokens defined.",
+    "LOW — 'Colors/Base/white' (#FFFFFF) exists in the _Primitives collection but is not aliased into the semantic Color collection. It is used 42× but has no --uds- CSS variable mapping.",
+    "LOW — 'Color de blur' (#40403F at 50% alpha) is a standalone raw value in the Color collection — not aliased to any Primitivos entry. It should alias to a negro primitive.",
+    "LOW — Colors in '1. Color modes' collection (Colors/Text/text-white, text-secondary_hover, text-quaternary, Component colors/Utility/Gray/utility-gray-700) all resolve to null — they are aliases to external library variables not available in this file.",
+    "LOW — Source Serif 4 / Regular / 12px with 20px line-height (×12, sample 'Description') is unusually open for a small serif. Verify it is intentional and not a copy-paste error.",
+    "LOW — Gamay typeface has 11+ distinct size/weight/style combinations with very low usage counts (1–4). Consider consolidating to fewer canonical display tokens.",
+    "LOW — Shadow usage is very low (4 and 2 instances). Neither shadow is bound to a variable or style — they are entirely hardcoded in component definitions.",
+    "INFO — The Espaciado collection defines all spacing as COMPONENT-SEMANTIC tokens (e.g. boton-primario/h = 24px), not as a generic scale (4, 8, 12, 16…). There is no primitive spacing scale defined in this file."
+  ]
+}
