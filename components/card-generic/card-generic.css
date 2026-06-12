@@ -1,0 +1,171 @@
+@import '../../tokens/index.css';
+
+/* ─── Base card ──────────────────────────────── */
+
+.uds-card-generic {
+  position: relative;
+  width: 352px;
+  overflow: hidden;
+  border-radius: var(--uds-border-radius-tarjeta);
+  background-color: transparent;
+  transition: background-color 0.1s ease-out;
+  cursor: pointer;
+}
+
+.uds-card-generic:hover {
+  background-color: var(--uds-color-boton-amarillo-fondo);
+}
+
+/* ─── Geometric variant ──────────────────────── */
+
+.uds-card-generic--geometric {
+  padding-top: 80px;    /* no token — see SPEC.md #2 */
+  padding-bottom: 80px; /* no token — see SPEC.md #2 */
+}
+
+/* Geometric illustration: two stacked abstract shapes via pseudo-elements */
+.uds-card-generic--geometric::before,
+.uds-card-generic--geometric::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  transition: opacity 0.1s ease-out;
+}
+
+/* Base pale-yellow layer (Vector 7 — no token, see SPEC.md #6) */
+.uds-card-generic--geometric::before {
+  background: #FCF4B3; /* no token — see SPEC.md #6 */
+  clip-path: polygon(
+    0% 0%,
+    100% 0%,
+    100% 55%,
+    60% 75%,
+    0% 55%
+  );
+  opacity: 1;
+  z-index: 0;
+}
+
+/* Brand-yellow shape (Vector 6 — MULTIPLY blend, mapped to --uds-amarillo-100) */
+.uds-card-generic--geometric::after {
+  background-color: var(--uds-amarillo-100);
+  clip-path: polygon(
+    25% 0%,
+    100% 0%,
+    100% 45%,
+    75% 65%,
+    25% 45%
+  );
+  mix-blend-mode: multiply;
+  opacity: 1;
+  z-index: 1;
+}
+
+/* Fade illustration on hover so the yellow fill reads cleanly */
+.uds-card-generic--geometric:hover::before,
+.uds-card-generic--geometric:hover::after {
+  opacity: 0;
+}
+
+/* ─── Rectangular variant ────────────────────── */
+
+.uds-card-generic--rectangular {
+  transition: background-color 0.15s ease-out;
+}
+
+.uds-card-generic--rectangular .uds-card-generic__body {
+  border: 1px solid var(--uds-color-borde-etiqueta);
+  border-radius: var(--uds-border-radius-tarjeta);
+}
+
+/* ─── Body ───────────────────────────────────── */
+
+.uds-card-generic__body {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: var(--uds-spacing-acciones-gap);
+  padding: var(--uds-spacing-boton-primario-h); /* 24px — see SPEC.md #1 */
+  border-radius: var(--uds-border-radius-tarjeta);
+}
+
+/* ─── Header (tag + title) ───────────────────── */
+
+.uds-card-generic__header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--uds-spacing-etiqueta-h);
+}
+
+/* ─── Tag (eyebrow label — display-only) ─────── */
+
+.uds-card-generic__tag {
+  font-family: var(--uds-font-sans);
+  font-size: var(--uds-text-body-md-size);
+  line-height: 1;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.08em; /* no token — see SPEC.md #5 */
+  color: var(--uds-color-borde-etiqueta);
+}
+
+/* ─── Title ──────────────────────────────────── */
+
+.uds-card-generic__title {
+  margin: 0;
+  font-family: var(--uds-font-sans);
+  font-size: var(--uds-text-card-title-sm-size);
+  line-height: var(--uds-text-card-title-sm-lh);
+  font-weight: var(--uds-text-card-title-sm-weight);
+  color: var(--uds-color-texto-primario);
+}
+
+/* Stretched link — entire card is clickable */
+.uds-card-generic__link {
+  color: inherit;
+  text-decoration: none;
+}
+
+.uds-card-generic__link::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  border-radius: var(--uds-border-radius-tarjeta);
+}
+
+.uds-card-generic__link:focus-visible::after {
+  outline: 2px solid var(--uds-color-texto-primario);
+  outline-offset: 2px;
+}
+
+/* ─── Description ────────────────────────────── */
+
+.uds-card-generic__description {
+  margin: 0;
+  font-family: var(--uds-font-sans);
+  font-size: var(--uds-text-body-md-size);
+  line-height: var(--uds-text-body-md-lh);
+  font-weight: 400;
+  color: var(--uds-color-texto-primario);
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* ─── Reduced motion ─────────────────────────── */
+
+@media (prefers-reduced-motion: reduce) {
+  .uds-card-generic,
+  .uds-card-generic--rectangular,
+  .uds-card-generic--geometric::before,
+  .uds-card-generic--geometric::after {
+    transition: none;
+  }
+}

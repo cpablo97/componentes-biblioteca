@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Card Generic — Ejemplos</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@300..700&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="card-generic.css" />
+  <style>
+    body {
+      background: var(--uds-crema-100);
+      padding: 3rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      align-items: flex-start;
+    }
+
+    .section-label {
+      flex-basis: 100%;
+      font-family: var(--uds-font-sans);
+      font-size: 12px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--uds-color-texto-secundario);
+      margin-bottom: -1rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ─── GEOMETRIC / Default ─────────────────── -->
+
+  <p class="section-label">Style: Geometric — Default</p>
+
+  <article class="uds-card-generic uds-card-generic--geometric">
+    <div class="uds-card-generic__body">
+      <div class="uds-card-generic__header">
+        <span class="uds-card-generic__tag">Reserva de Salas</span>
+        <h3 class="uds-card-generic__title">
+          <a class="uds-card-generic__link" href="#">
+            Salas Biblioteca General
+          </a>
+        </h3>
+      </div>
+      <p class="uds-card-generic__description">
+        Proporciona acceso a las salas de estudio y trabajo colaborativo
+        ubicadas en las instalaciones de la Biblioteca General.
+      </p>
+    </div>
+  </article>
+
+  <!-- Geometric without tag (Show Tag = false) -->
+  <article class="uds-card-generic uds-card-generic--geometric">
+    <div class="uds-card-generic__body">
+      <div class="uds-card-generic__header">
+        <h3 class="uds-card-generic__title">
+          <a class="uds-card-generic__link" href="#">
+            Colecciones Digitales
+          </a>
+        </h3>
+      </div>
+      <p class="uds-card-generic__description">
+        Accede al catálogo completo de recursos digitales: artículos,
+        libros electrónicos, bases de datos y más.
+      </p>
+    </div>
+  </article>
+
+  <!-- ─── RECTANGULAR / Default ───────────────── -->
+
+  <p class="section-label">Style: Rectangular — Default</p>
+
+  <article class="uds-card-generic uds-card-generic--rectangular">
+    <div class="uds-card-generic__body">
+      <div class="uds-card-generic__header">
+        <span class="uds-card-generic__tag">Servicios</span>
+        <h3 class="uds-card-generic__title">
+          <a class="uds-card-generic__link" href="#">
+            Préstamo de Equipos
+          </a>
+        </h3>
+      </div>
+      <p class="uds-card-generic__description">
+        Consulta y solicita equipos disponibles para préstamo: portátiles,
+        cámaras, grabadoras y material multimedia.
+      </p>
+    </div>
+  </article>
+
+  <!-- Rectangular without tag -->
+  <article class="uds-card-generic uds-card-generic--rectangular">
+    <div class="uds-card-generic__body">
+      <div class="uds-card-generic__header">
+        <h3 class="uds-card-generic__title">
+          <a class="uds-card-generic__link" href="#">
+            Acceso a Bases de Datos
+          </a>
+        </h3>
+      </div>
+      <p class="uds-card-generic__description">
+        Conecta con plataformas académicas suscritas por la universidad:
+        JSTOR, Scopus, Web of Science y otras.
+      </p>
+    </div>
+  </article>
+
+</body>
+</html>

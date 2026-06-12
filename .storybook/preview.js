@@ -1,6 +1,5 @@
 import '../tokens/index.css';
 
-/** @type { import('@storybook/html').Preview } */
 const preview = {
   parameters: {
     backgrounds: {

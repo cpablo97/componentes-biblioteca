@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Search Section — UDS Component</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@300..700&family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="search-section.css" />
+  <style>
+    body {
+      margin: 0;
+      font-family: var(--uds-font-sans, sans-serif);
+      background: #F7F6F0;
+    }
+    .demo-label {
+      font-family: sans-serif;
+      font-size: 12px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #6B6B68;
+      padding: 1.5rem 1rem 0.25rem;
+    }
+  </style>
+</head>
+<body>
+
+  <p class="demo-label">Desktop — Tab: i-RUS selecionado</p>
+
+  <section
+    class="uds-search-section"
+    aria-label="Búsqueda de recursos"
+    id="search-section-demo"
+  >
+    <div class="uds-search-section__container">
+
+      <!-- Tab Line -->
+      <div class="uds-tab-line" role="tablist" aria-label="Modos de búsqueda">
+        <button
+          class="uds-tab"
+          role="tab"
+          data-state="selected"
+          aria-selected="true"
+          aria-controls="tab-panel-irus"
+          id="tab-irus"
+          tabindex="0"
+        >i-RUS</button>
+        <button
+          class="uds-tab"
+          role="tab"
+          data-state="default"
+          aria-selected="false"
+          aria-controls="tab-panel-gps"
+          id="tab-gps"
+          tabindex="-1"
+        >GPS Bibliográfico</button>
+        <button
+          class="uds-tab"
+          role="tab"
+          data-state="default"
+          aria-selected="false"
+          aria-controls="tab-panel-portal"
+          id="tab-portal"
+          tabindex="-1"
+        >En el portal</button>
+      </div>
+
+      <!-- Tab Panels (one per tab) -->
+      <div id="tab-panel-irus" role="tabpanel" aria-labelledby="tab-irus" hidden="false">
+        <!-- Inner search frame -->
+        <div class="uds-search-section__inner">
+
+          <!-- Search bar -->
+          <form class="uds-search-section__search-bar" role="search" action="#" method="get">
+            <label for="search-input-demo" class="visually-hidden">Buscar en i-RUS</label>
+            <div class="uds-search-section__input-wrapper">
+              <span class="uds-search-section__search-icon" aria-hidden="true">search</span>
+              <input
+                id="search-input-demo"
+                class="uds-search-section__input"
+                type="search"
+                name="q"
+                placeholder="Buscar libros, artículos, juegos, mapas..."
+                autocomplete="off"
+              />
+            </div>
+            <button class="uds-search-section__buscar" type="submit">Buscar</button>
+          </form>
+
+          <!-- Search Categories toggle -->
+          <button
+            class="uds-search-categories"
+            type="button"
+            aria-expanded="false"
+            aria-controls="search-categories-panel"
+            data-state="closed"
+          >
+            <span class="uds-search-categories__label">Categorías de búsqueda</span>
+            <span class="uds-search-categories__icon" aria-hidden="true">keyboard_arrow_down</span>
+          </button>
+
+          <!-- Categories panel (hidden by default) -->
+          <div id="search-categories-panel" hidden>
+            <!-- Category chips go here — to be defined with uds-tag sub-elements -->
+          </div>
+
+        </div>
+      </div>
+
+      <div id="tab-panel-gps" role="tabpanel" aria-labelledby="tab-gps" hidden>
+        <div class="uds-search-section__inner">
+          <form class="uds-search-section__search-bar" role="search" action="#" method="get">
+            <label for="search-input-gps" class="visually-hidden">Buscar en GPS Bibliográfico</label>
+            <div class="uds-search-section__input-wrapper">
+              <span class="uds-search-section__search-icon" aria-hidden="true">search</span>
+              <input
+                id="search-input-gps"
+                class="uds-search-section__input"
+                type="search"
+                name="q"
+                placeholder="Buscar libros, artículos, juegos, mapas..."
+                autocomplete="off"
+              />
+            </div>
+            <button class="uds-search-section__buscar" type="submit">Buscar</button>
+          </form>
+          <button class="uds-search-categories" type="button" aria-expanded="false" data-state="closed">
+            <span class="uds-search-categories__label">Categorías de búsqueda</span>
+            <span class="uds-search-categories__icon" aria-hidden="true">keyboard_arrow_down</span>
+          </button>
+        </div>
+      </div>
+
+      <div id="tab-panel-portal" role="tabpanel" aria-labelledby="tab-portal" hidden>
+        <div class="uds-search-section__inner">
+          <form class="uds-search-section__search-bar" role="search" action="#" method="get">
+            <label for="search-input-portal" class="visually-hidden">Buscar en el portal</label>
+            <div class="uds-search-section__input-wrapper">
+              <span class="uds-search-section__search-icon" aria-hidden="true">search</span>
+              <input
+                id="search-input-portal"
+                class="uds-search-section__input"
+                type="search"
+                name="q"
+                placeholder="Buscar libros, artículos, juegos, mapas..."
+                autocomplete="off"
+              />
+            </div>
+            <button class="uds-search-section__buscar" type="submit">Buscar</button>
+          </form>
+          <button class="uds-search-categories" type="button" aria-expanded="false" data-state="closed">
+            <span class="uds-search-categories__label">Categorías de búsqueda</span>
+            <span class="uds-search-categories__icon" aria-hidden="true">keyboard_arrow_down</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Button group -->
+      <div class="uds-search-section__button-group">
+        <button class="uds-button uds-button--primary" type="button">
+          <span class="uds-button__content">
+            <span class="uds-button__icon" aria-hidden="true">category_search</span>
+            <span class="uds-button__label">Asistente IA</span>
+          </span>
+        </button>
+        <button class="uds-button uds-button--secondary" type="button">
+          <span class="uds-button__content">
+            <span class="uds-button__label">Búsqueda Avanzada</span>
+          </span>
+        </button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Visually-hidden utility (should move to global reset once available) -->
+  <style>
+    .visually-hidden {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+  </style>
+
+  <script type="module">
+    import { init } from './search-section.js';
+    document.querySelectorAll('.uds-search-section').forEach(init);
+  </script>
+
+</body>
+</html>

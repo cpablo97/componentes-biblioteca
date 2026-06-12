@@ -1,0 +1,45 @@
+@import '../../tokens/index.css';
+
+/* ─── Search Categories toggle ───────────────── */
+
+.uds-search-categories {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--uds-spacing-etiqueta-v); /* 4px */
+  background: transparent;
+  border: none;
+  color: var(--uds-color-borde-sutil); /* gris-200 #CFCFCF */
+  font-family: var(--uds-font-sans);
+  font-size: var(--uds-text-body-md-compact-size);
+  line-height: var(--uds-text-body-md-compact-lh);
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+}
+
+.uds-search-categories__label {
+  text-decoration: underline;
+}
+
+.uds-search-categories__icon {
+  font-family: 'Material Symbols Outlined';
+  font-size: var(--uds-icon-size-md); /* 20px */
+  font-style: normal;
+  font-weight: normal;
+  user-select: none;
+  transition: transform 0.2s ease;
+}
+
+.uds-search-categories[data-state="open"] .uds-search-categories__icon {
+  transform: rotate(180deg);
+}
+
+.uds-search-categories:focus-visible {
+  outline: 2px solid var(--uds-color-boton-amarillo-fondo);
+  outline-offset: 4px;
+  border-radius: var(--uds-border-radius-etiqueta);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .uds-search-categories__icon { transition: none; }
+}

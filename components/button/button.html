@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Button — UDS Component</title>
+  <link rel="stylesheet" href="button.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <style>
+    body {
+      font-family: sans-serif;
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      background: #F7F6F0;
+    }
+    .demo-section {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+    .demo-label {
+      font-size: 12px;
+      color: #6B6B68;
+      font-family: sans-serif;
+    }
+    .demo-row {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .demo-dark {
+      background: #191916;
+      padding: 1.5rem;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Primary (IA branded) — on dark background as intended -->
+  <div class="demo-section">
+    <p class="demo-label">Primary (IA) — Default &amp; Hover</p>
+    <div class="demo-dark demo-row">
+      <button class="uds-button uds-button--primary" type="button">
+        <span class="uds-button__content">
+          <span class="uds-button__icon" aria-hidden="true">category_search</span>
+          <span class="uds-button__label">Asistente IA</span>
+        </span>
+      </button>
+
+      <button class="uds-button uds-button--primary" type="button">
+        <span class="uds-button__content">
+          <span class="uds-button__icon" aria-hidden="true">search</span>
+          <span class="uds-button__label">Buscar</span>
+        </span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Secondary (ghost/link) — on dark background as intended -->
+  <div class="demo-section">
+    <p class="demo-label">Secondary (link) — Default &amp; Hover</p>
+    <div class="demo-dark demo-row">
+      <button class="uds-button uds-button--secondary" type="button">
+        <span class="uds-button__content">
+          <span class="uds-button__label">Búsqueda Avanzada</span>
+        </span>
+      </button>
+
+      <button class="uds-button uds-button--secondary" type="button">
+        <span class="uds-button__content">
+          <span class="uds-button__label">Ver todos los resultados</span>
+        </span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Disabled states -->
+  <div class="demo-section">
+    <p class="demo-label">Disabled</p>
+    <div class="demo-dark demo-row">
+      <button class="uds-button uds-button--primary" type="button" disabled>
+        <span class="uds-button__content">
+          <span class="uds-button__icon" aria-hidden="true">category_search</span>
+          <span class="uds-button__label">Asistente IA</span>
+        </span>
+      </button>
+
+      <button class="uds-button uds-button--secondary" type="button" disabled>
+        <span class="uds-button__content">
+          <span class="uds-button__label">Búsqueda Avanzada</span>
+        </span>
+      </button>
+    </div>
+  </div>
+
+  <!-- As anchor links -->
+  <div class="demo-section">
+    <p class="demo-label">Como enlace (&lt;a&gt;)</p>
+    <div class="demo-dark demo-row">
+      <a href="#" class="uds-button uds-button--primary">
+        <span class="uds-button__content">
+          <span class="uds-button__icon" aria-hidden="true">category_search</span>
+          <span class="uds-button__label">Asistente IA</span>
+        </span>
+      </a>
+
+      <a href="#" class="uds-button uds-button--secondary">
+        <span class="uds-button__content">
+          <span class="uds-button__label">Búsqueda Avanzada</span>
+        </span>
+      </a>
+    </div>
+  </div>
+
+</body>
+</html>

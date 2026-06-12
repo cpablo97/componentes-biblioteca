@@ -1,0 +1,147 @@
+@import '../../tokens/index.css';
+@import '../tab/tab.css';
+@import '../search-categories/search-categories.css';
+@import '../tag/tag.css';
+@import '../button/button.css';
+
+/* ─── Outer wrapper ──────────────────────────── */
+
+.uds-search-section {
+  display: flex;
+  justify-content: center;
+  padding: 48px 56px; /* external lib vars — no resolved token for 48/56px */
+}
+
+/* ─── Main container (dark panel) ───────────── */
+
+.uds-search-section__container {
+  width: 100%;
+  max-width: 768px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--uds-spacing-boton-primario-h); /* 24px — external lib var, nearest token */
+  padding: 48px; /* external lib var — no token */
+  background-color: var(--uds-color-boton-primario-fondo); /* negro-200 #191916 */
+  border-radius: var(--uds-border-radius-etiqueta); /* 2px */
+}
+
+/* ─── Inner search frame ─────────────────────── */
+
+.uds-search-section__inner {
+  display: flex;
+  flex-direction: column;
+  gap: var(--uds-spacing-acciones-gap); /* 12px — external lib var, nearest token */
+}
+
+/* ─── Search bar row ─────────────────────────── */
+
+.uds-search-section__search-bar {
+  display: flex;
+  gap: var(--uds-spacing-etiqueta-h); /* 8px */
+}
+
+/* ─── Search input wrapper ───────────────────── */
+
+.uds-search-section__input-wrapper {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: var(--uds-spacing-etiqueta-h); /* 8px */
+  height: 36px; /* no token */
+  padding: var(--uds-spacing-etiqueta-v); /* 4px */
+  background: transparent;
+  border: 1px solid var(--uds-color-superficie-slot); /* crema-50 #F5F5F2 */
+  border-radius: var(--uds-border-radius-etiqueta); /* 2px */
+}
+
+.uds-search-section__search-icon {
+  font-family: 'Material Symbols Outlined';
+  font-size: var(--uds-icon-size-md); /* 20px */
+  font-style: normal;
+  font-weight: normal;
+  color: var(--uds-color-texto-invertido); /* blanco-100 */
+  flex-shrink: 0;
+  user-select: none;
+  line-height: 1;
+}
+
+.uds-search-section__input {
+  flex: 1;
+  min-width: 0;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: var(--uds-color-texto-invertido); /* blanco-100 */
+  font-family: var(--uds-font-sans);
+  font-size: var(--uds-text-body-md-compact-size); /* 16px */
+  line-height: var(--uds-text-body-md-compact-lh); /* 20px */
+  letter-spacing: 0.04em;
+}
+
+.uds-search-section__input::placeholder {
+  color: var(--uds-color-texto-invertido);
+  opacity: 0.6;
+}
+
+/* Remove browser-default search input decoration */
+.uds-search-section__input[type="search"]::-webkit-search-decoration,
+.uds-search-section__input[type="search"]::-webkit-search-cancel-button {
+  appearance: none;
+}
+
+/* ─── Buscar button ──────────────────────────── */
+
+.uds-search-section__buscar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 36px; /* no token */
+  padding: 0 var(--uds-spacing-etiqueta-h); /* 8px H — 0 V since height is fixed */
+  background: transparent;
+  border: 1px solid var(--uds-color-superficie-slot); /* crema-50 */
+  border-radius: var(--uds-border-radius-etiqueta); /* 2px */
+  color: var(--uds-color-superficie-slot); /* crema-50 — text matches border */
+  font-family: var(--uds-font-sans);
+  font-size: var(--uds-text-body-md-compact-size); /* 16px */
+  line-height: var(--uds-text-body-md-compact-lh); /* 20px */
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.uds-search-section__buscar:hover {
+  background: rgba(245, 245, 242, 0.1); /* crema-50 at 10% — no token for translucent overlay */
+}
+
+.uds-search-section__buscar:focus-visible {
+  outline: 2px solid var(--uds-color-boton-amarillo-fondo);
+  outline-offset: 2px;
+}
+
+/* ─── Button group ───────────────────────────── */
+
+.uds-search-section__button-group {
+  display: flex;
+  align-items: center;
+  gap: var(--uds-spacing-etiqueta-h); /* 8px */
+}
+
+.uds-search-section__button-group .uds-button--primary {
+  height: 32px; /* no token — IA button is 32px, not 36px like search bar */
+}
+
+.uds-search-section__button-group .uds-button--secondary {
+  color: var(--uds-color-borde-sutil); /* gris-200 — override base secondary (gris-100) for dark context */
+}
+
+/* ─── Mobile ─────────────────────────────────── */
+
+@media (max-width: 767px) {
+  .uds-search-section {
+    padding: var(--uds-spacing-boton-primario-h); /* 24px */
+  }
+
+  .uds-search-section__container {
+    padding: var(--uds-spacing-boton-primario-h); /* 24px */
+  }
+}

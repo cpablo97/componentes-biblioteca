@@ -1,0 +1,102 @@
+@import '../../tokens/index.css';
+
+/* ─────────────────────────────────────────────
+ * uds-tag
+ * Inline label used for taxonomy, content type, and feature markers.
+ * Variants: --transparent (default), --taxonomy, --special
+ * ───────────────────────────────────────────── */
+
+.uds-tag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--uds-spacing-etiqueta-h); /* 8px all sides — see SPEC.md open question #2 */
+  border-radius: var(--uds-border-radius-etiqueta);
+  font-family: var(--uds-font-sans);
+  font-size: var(--uds-text-tag-size);
+  line-height: var(--uds-text-tag-lh);
+  font-weight: 400;
+  white-space: nowrap;
+  cursor: pointer;
+  border: none;
+  text-decoration: none;
+  backdrop-filter: blur(32px); /* no token yet — see SPEC.md open question #1 */
+  -webkit-backdrop-filter: blur(32px);
+  transition: background-color 0.15s ease, color 0.15s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+
+/* ─── Style: Transparent ──────────────────── */
+
+.uds-tag--transparent {
+  background-color: var(--uds-color-superficie-overlay);
+  color: var(--uds-color-texto-invertido);
+}
+
+.uds-tag--transparent:hover {
+  background-color: rgba(64, 63, 63, 0.9); /* no token — see SPEC.md open question #3 */
+}
+
+
+/* ─── Style: Taxonomy ─────────────────────── */
+
+.uds-tag--taxonomy {
+  background-color: var(--uds-color-superficie-slot);
+  color: var(--uds-amarillo-900); /* primitive — no semantic alias exists yet, see SPEC.md open question #4 */
+}
+
+.uds-tag--taxonomy:hover {
+  background-color: var(--uds-color-superficie-seleccionado); /* approx — see SPEC.md open question #3 */
+}
+
+
+/* ─── Style: Special ──────────────────────── */
+
+.uds-tag--special {
+  background-color: var(--uds-color-ia-fondo);
+  color: var(--uds-color-ia-texto);
+}
+
+.uds-tag--special::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-color: var(--uds-color-ia-acento);
+  opacity: 0;
+  transition: opacity 0.15s ease;
+  pointer-events: none;
+}
+
+.uds-tag--special:hover::before {
+  opacity: 0.3; /* no token for this hover overlay — see SPEC.md open question #3 */
+}
+
+
+/* ─── Focus ───────────────────────────────── */
+
+.uds-tag:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
+}
+
+
+/* ─── Disabled ────────────────────────────── */
+
+.uds-tag:disabled,
+.uds-tag[aria-disabled="true"] {
+  opacity: 0.4;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+
+/* ─── Reduced motion ──────────────────────── */
+
+@media (prefers-reduced-motion: reduce) {
+  .uds-tag,
+  .uds-tag::before {
+    transition: none;
+  }
+}

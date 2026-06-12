@@ -1,0 +1,117 @@
+@import '../../tokens/index.css';
+
+/* ─────────────────────────────────────────────
+ * uds-button
+ * Two-variant button for Search Section and IA contexts.
+ * Variants: --primary (IA branded), --secondary (ghost/link)
+ * See SPEC.md for full token mapping and open questions.
+ * ───────────────────────────────────────────── */
+
+.uds-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--uds-spacing-etiqueta-h); /* 8px all sides */
+  border-radius: var(--uds-border-radius-etiqueta);
+  font-family: var(--uds-font-sans);
+  font-size: var(--uds-text-button-size);
+  line-height: var(--uds-text-button-lh);
+  font-weight: 400; /* Figma uses 400; differs from --uds-text-button-weight: 600 — see SPEC.md #1 */
+  letter-spacing: 0.04em; /* 4% of font-size; no token yet — see SPEC.md #2 */
+  white-space: nowrap;
+  cursor: pointer;
+  border: 1px solid transparent;
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+  transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+
+.uds-button__content {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--uds-spacing-etiqueta-v); /* 4px icon–label gap */
+}
+
+.uds-button__icon {
+  font-family: 'Material Symbols Outlined';
+  font-size: var(--uds-icon-size-md);
+  font-weight: 300;
+  line-height: 1;
+  font-style: normal;
+  letter-spacing: normal;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  user-select: none;
+}
+
+
+/* ─── Style: Primary (IA branded) ─────────── */
+
+.uds-button--primary {
+  background-color: var(--uds-color-ia-boton-fondo);
+  border-color: var(--uds-color-ia-acento);
+  color: var(--uds-color-ia-acento);
+  min-width: 72px;  /* bound variable unresolved — see SPEC.md #5 */
+  max-width: 280px; /* bound variable unresolved — see SPEC.md #5 */
+}
+
+.uds-button--primary::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-color: #000000;
+  opacity: 0;
+  transition: opacity 0.15s ease;
+  pointer-events: none;
+}
+
+.uds-button--primary:hover::before {
+  opacity: 0.2; /* black overlay 20% — no token — see SPEC.md open question #4 */
+}
+
+
+/* ─── Style: Secondary (ghost/link) ───────── */
+
+.uds-button--secondary {
+  background-color: transparent;
+  border-color: transparent;
+  color: var(--uds-gris-100); /* primitive — no semantic alias yet, see SPEC.md #3 */
+}
+
+.uds-button--secondary .uds-button__label {
+  text-decoration: underline;
+}
+
+.uds-button--secondary:hover {
+  background-color: #312E1C; /* no token — see SPEC.md #4 */
+  border-color: transparent;
+}
+
+
+/* ─── Focus ───────────────────────────────── */
+
+.uds-button:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
+}
+
+
+/* ─── Disabled ────────────────────────────── */
+
+.uds-button:disabled,
+.uds-button[aria-disabled="true"] {
+  opacity: 0.4;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+
+/* ─── Reduced motion ──────────────────────── */
+
+@media (prefers-reduced-motion: reduce) {
+  .uds-button,
+  .uds-button::before {
+    transition: none;
+  }
+}

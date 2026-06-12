@@ -1,0 +1,284 @@
+@import '../../tokens/index.css';
+@import '../tag/tag.css';
+@import '../button/button.css';
+
+/* ─────────────────────────────────────────────
+ * uds-result-card
+ * Collapsible search-result card for database resources.
+ * States: data-state="closed" (default) | data-state="open"
+ * Sub-elements: uds-tag (imported), uds-button base (imported).
+ * See SPEC.md for token mapping and open questions.
+ * ───────────────────────────────────────────── */
+
+/* ─── Card container ─────────────────────────── */
+
+.uds-result-card {
+  background-color: var(--uds-color-superficie-base);
+  box-shadow: var(--uds-sombra-suave);
+  border-radius: var(--uds-border-radius-boton);
+  padding: var(--uds-spacing-boton-primario-h); /* 24px — see SPEC.md #1 */
+  display: flex;
+  flex-direction: column;
+  gap: var(--uds-spacing-boton-primario-h); /* 24px */
+  overflow: hidden;
+}
+
+
+/* ─── Header ─────────────────────────────────── */
+
+.uds-result-card__header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--uds-spacing-etiqueta-h); /* 8px */
+}
+
+.uds-result-card__leading-tags {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--uds-spacing-etiqueta-h); /* 8px */
+}
+
+.uds-result-card__title {
+  margin: 0;
+  font-family: var(--uds-font-sans);
+  font-size: var(--uds-text-card-title-sm-size);
+  line-height: var(--uds-text-card-title-sm-lh);
+  font-weight: var(--uds-text-card-title-sm-weight);
+  color: var(--uds-color-texto-primario);
+}
+
+.uds-result-card__subject-tags {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--uds-spacing-etiqueta-v); /* 4px */
+}
+
+
+/* ─── Content (description + toggle) ────────── */
+
+.uds-result-card__content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--uds-spacing-etiqueta-h); /* 8px */
+}
+
+.uds-result-card__description {
+  margin: 0;
+  font-family: var(--uds-font-sans);
+  font-size: var(--uds-text-body-md-size);
+  line-height: var(--uds-text-body-md-lh);
+  font-weight: 400;
+  color: var(--uds-color-texto-primario); /* unbound #000 in Figma — see SPEC.md #6 */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Closed: clamp to 3 lines */
+.uds-result-card[data-state="closed"] .uds-result-card__description {
+  -webkit-line-clamp: 3;
+}
+
+/* Open: show full text */
+.uds-result-card[data-state="open"] .uds-result-card__description {
+  -webkit-line-clamp: unset;
+}
+
+
+/* ─── Toggle button (Ver más / Ver menos) ────── */
+/* Extends uds-button base; overrides color for card context */
+
+.uds-result-card__btn-toggle {
+  align-self: flex-start;
+  background-color: transparent;
+  border-color: transparent;
+  color: var(--uds-gris-700); /* primitive — see SPEC.md #7 */
+  line-height: var(--uds-text-body-md-compact-lh); /* 20px — see SPEC.md #5 */
+}
+
+.uds-result-card__btn-toggle .uds-button__label {
+  text-decoration: underline;
+}
+
+.uds-result-card__btn-toggle:hover {
+  background-color: var(--uds-color-superficie-seleccionado);
+  border-color: transparent;
+}
+
+.uds-result-card__btn-toggle .uds-button__icon {
+  transition: transform 0.15s ease;
+}
+
+.uds-result-card[data-state="open"] .uds-result-card__btn-toggle .uds-button__icon {
+  transform: rotate(180deg);
+}
+
+
+/* ─── Info rows ──────────────────────────────── */
+
+.uds-result-card__info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--uds-spacing-etiqueta-v); /* 4px */
+}
+
+.uds-result-card__info-row {
+  display: flex;
+  align-items: center;
+  gap: var(--uds-spacing-etiqueta-v); /* 4px */
+}
+
+.uds-result-card__info-icon {
+  font-family: 'Material Symbols Outlined';
+  font-size: var(--uds-icon-size-sm); /* 16px */
+  font-weight: 300;
+  line-height: 1;
+  font-style: normal;
+  letter-spacing: normal;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  user-select: none;
+  flex-shrink: 0;
+  color: var(--uds-color-texto-primario);
+}
+
+.uds-result-card__info-icon--warning {
+  color: #803300; /* no token — see SPEC.md #2 */
+}
+
+.uds-result-card__info-text {
+  margin: 0;
+  font-family: var(--uds-font-sans);
+  font-size: var(--uds-text-body-xs-size); /* 12px */
+  line-height: var(--uds-text-body-xs-lh); /* 16px */
+  font-weight: 400;
+  color: var(--uds-color-texto-primario);
+}
+
+.uds-result-card__info-text--warning {
+  line-height: var(--uds-text-body-xs-tight-lh); /* 12px */
+  color: #803300; /* no token — see SPEC.md #2 */
+}
+
+
+/* ─── Divider ─────────────────────────────────── */
+
+.uds-result-card__divider {
+  border: none;
+  border-top: 1px solid var(--uds-color-superficie-slot); /* ≈ #F5F5F2 — see SPEC.md */
+  margin: 0;
+}
+
+
+/* ─── Actions (CTA + link button) ───────────── */
+
+.uds-result-card__actions {
+  display: flex;
+  align-items: center;
+  gap: var(--uds-spacing-etiqueta-h); /* 8px */
+  flex-wrap: wrap;
+}
+
+/* CTA button — crema fill + gray border — not covered by uds-button variants */
+.uds-result-card__btn-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--uds-spacing-etiqueta-v); /* 4px */
+  padding: var(--uds-spacing-etiqueta-h); /* 8px */
+  background-color: var(--uds-color-superficie-slot); /* ≈ #FCFCF9 — see SPEC.md #3 */
+  border: 1px solid var(--uds-gris-200); /* ≈ #BABABC — see SPEC.md #4 */
+  border-radius: var(--uds-border-radius-etiqueta); /* 2px */
+  min-width: 72px;
+  max-width: 280px;
+  color: var(--uds-gris-700); /* #4D4D4C — see SPEC.md #7 */
+  font-family: var(--uds-font-sans);
+  font-size: var(--uds-text-body-md-size); /* 16px */
+  line-height: var(--uds-text-body-md-compact-lh); /* 20px */
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: background-color 0.15s ease, border-color 0.15s ease;
+}
+
+.uds-result-card__btn-cta:hover {
+  background-color: var(--uds-color-superficie-seleccionado);
+  border-color: var(--uds-gris-200);
+}
+
+.uds-result-card__btn-cta:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
+}
+
+.uds-result-card__btn-icon {
+  font-family: 'Material Symbols Outlined';
+  font-size: var(--uds-icon-size-md); /* 20px */
+  font-weight: 300;
+  line-height: 1;
+  font-style: normal;
+  letter-spacing: normal;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  user-select: none;
+}
+
+/* Link button — ghost underlined, same color as toggle */
+.uds-result-card__btn-link {
+  background-color: transparent;
+  border-color: transparent;
+  color: var(--uds-gris-700); /* #4D4D4C — see SPEC.md #7 */
+  line-height: var(--uds-text-body-md-compact-lh); /* 20px */
+}
+
+.uds-result-card__btn-link .uds-button__label {
+  text-decoration: underline;
+}
+
+.uds-result-card__btn-link:hover {
+  background-color: var(--uds-color-superficie-seleccionado);
+  border-color: transparent;
+}
+
+
+/* ─── Dark mode ──────────────────────────────── */
+
+[data-theme="dark"] .uds-result-card {
+  background-color: var(--uds-color-superficie-tarjeta);
+  box-shadow: none;
+  border: 1px solid var(--uds-color-borde-sutil);
+}
+
+[data-theme="dark"] .uds-result-card__divider {
+  border-top-color: var(--uds-color-borde-sutil);
+}
+
+[data-theme="dark"] .uds-result-card__btn-cta {
+  background-color: var(--uds-color-superficie-slot);
+  border-color: var(--uds-color-borde-sutil);
+  color: var(--uds-color-texto-primario);
+}
+
+[data-theme="dark"] .uds-result-card__btn-cta:hover {
+  background-color: var(--uds-color-superficie-seleccionado);
+}
+
+[data-theme="dark"] .uds-result-card__btn-toggle,
+[data-theme="dark"] .uds-result-card__btn-link {
+  color: var(--uds-color-texto-primario);
+}
+
+
+/* ─── Reduced motion ─────────────────────────── */
+
+@media (prefers-reduced-motion: reduce) {
+  .uds-result-card__btn-toggle .uds-button__icon,
+  .uds-result-card__btn-cta,
+  .uds-result-card__btn-link {
+    transition: none;
+  }
+}

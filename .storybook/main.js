@@ -1,17 +1,15 @@
-
-
-/** @type { import('@storybook/html-vite').StorybookConfig } */
 const config = {
-  "stories": [
-    "../stories/**/*.mdx",
-    "../stories/**/*.stories.@(js|jsx|mjs|ts|tsx)"
-  ],
-  "addons": [
-    "@chromatic-com/storybook",
-    "@storybook/addon-vitest",
-    "@storybook/addon-a11y",
-    "@storybook/addon-docs"
-  ],
-  "framework": "@storybook/html-vite"
+  stories: ['../components/**/*.stories.js'],
+  addons: ['@storybook/addon-docs', '@storybook/addon-a11y'],
+  framework: { name: '@storybook/html-vite', options: {} },
+  viteFinal: async (config) => {
+    // On GitHub Actions the static site lives at /componentes-biblioteca/.
+    // Setting base here ensures all chunk and asset URLs resolve correctly.
+    if (process.env.GITHUB_ACTIONS) {
+      config.base = '/componentes-biblioteca/';
+    }
+    return config;
+  },
 };
+
 export default config;
